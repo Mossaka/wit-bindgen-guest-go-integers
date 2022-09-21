@@ -1,0 +1,2 @@
+a1: func(x: u8)
+a2: func(x: s8)
