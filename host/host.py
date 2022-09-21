@@ -23,7 +23,8 @@ def run(wasm_file: str) -> None:
     add_integers_to_linker(linker, store, MyIntegers())
     wasm = IntegersExport(store, linker, module)
 
-    res = wasm.res(store)
+    res = wasm.res1(store)
+    res = wasm.res2(store)
     print(res)
 
 if __name__ == '__main__':

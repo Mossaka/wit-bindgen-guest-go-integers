@@ -4,23 +4,18 @@ package integers_export
 // #include <stdlib.h>
 import "C"
 
-import (
-	"fmt"
-	"os"
-)
 
-var res = defaultres;
+var integers_export IntegersExport = nil
 
-func defaultres() uint8 {
-	fmt.Fprintln(os.Stderr, "res undefined")
-	return nil
+func SetIntegersExport(i IntegersExport) {
+	integers_export = i
 }
 
-func Res(fn func() uint8) {
-	res = fn
+type IntegersExport interface {
+	Res() uint8
 }
 
 //export integers_export_res
 func integersExportRes() C.uint8_t {
-	return C.uint8_t(res())
+	return C.uint8_t(integers_export.Res())
 }

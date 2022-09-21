@@ -9,3 +9,13 @@ mod integers_export {
     fn res() -> u8;
   }
 }
+
+// struct IntegersExport {}
+
+// impl integers_export::IntegersExport for IntegersExport {
+//   fn res() -> u8 {
+//     42
+//   }
+// }
+
+// IntegersExport::res()

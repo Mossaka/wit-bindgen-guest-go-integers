@@ -3,17 +3,19 @@ package main
 import (
 	"github.com/mossaka/go-wit-bindgen-integers/integers"
 	"github.com/mossaka/go-wit-bindgen-integers/integers_export"
+	// "fmt"
 )
 
 func init() {
-	integers_export.Res(func() uint8 {
-		return 42
-	})
+	integers_export.SetIntegersExport(IntegersExportImpl{})
+}
+
+type IntegersExportImpl struct {}
+
+func (i IntegersExportImpl) Res() uint8 {
+	return 42
 }
 
 func main() {
-	integers.A1(1)
-	integers.A2(2)
+	http.get().put()
 }
-
-
