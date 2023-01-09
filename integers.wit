@@ -1,2 +1,13 @@
-a1: func(x: u8)
-a2: func(x: s8)
+interface imports {
+    a1: func(x: u8)
+    a2: func(x: s8)
+}
+
+interface exports {
+    res: func() -> u8
+}
+
+world integers {
+    import imports: imports
+    default export exports
+}
